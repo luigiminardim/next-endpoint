@@ -17,7 +17,7 @@ fully compatible with the Express ecosystem, meaning we can use Express
 middleware directly in a Next.js program.
 
 > This package is most inspired by the
-> (next-controller)[https://www.npmjs.com/package/next-controller].
+> [next-controller](https://www.npmjs.com/package/next-controller).
 > But it avoids the usage of object-oriented programming, and discards the usage of decorators.
 
 ## Install
@@ -27,8 +27,6 @@ middleware directly in a Next.js program.
 ```sh
 npm i next-endpoint
 ```
-
-````
 
 ### YARN
 
