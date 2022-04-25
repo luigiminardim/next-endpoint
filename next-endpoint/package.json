@@ -1,0 +1,20 @@
+{
+  "name": "@luigiminardim/next-endpoint",
+  "version": "0.0.0",
+  "description": "Elegant functional controller wrapper for Next.js framework.",
+  "main": "dist/index.js",
+  "author": "luigiminardim",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "next": "12.0.0",
+    "typescript": "^4.6.3"
+  },
+  "peerDependencies": {
+    "next": "12"
+  },
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc"
+  }
+}

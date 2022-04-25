@@ -1,0 +1,13 @@
+{
+  "name": "root",
+  "version": "0.0.0",
+  "description": "Elegant functional controller wrapper for Next.js framework.",
+  "main": "dist/index.js",
+  "author": "luigiminardim",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "next-endpoint",
+    "test"
+  ]
+}
