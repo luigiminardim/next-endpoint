@@ -1,4 +1,4 @@
-# Next-Controller
+# Next-Endpoint
 
 Elegant API/MVC controller wrapper for Next.js framework.
 
