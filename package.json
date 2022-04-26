@@ -9,5 +9,16 @@
   "workspaces": [
     "next-endpoint",
     "test"
-  ]
+  ],
+  "devDependencies": {
+    "husky": "^7.0.4",
+    "lint-staged": "^12.4.1"
+  },
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown",
+    "*.{js,jsx,ts,tsx}": "eslint --fix"
+  }
 }
