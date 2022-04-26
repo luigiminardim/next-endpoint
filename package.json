@@ -6,12 +6,14 @@
   "author": "luigiminardim",
   "license": "MIT",
   "private": true,
+  "repository": "https://github.com/luigiminardim/next-endpoint.git",
   "workspaces": [
     "next-endpoint",
     "test"
   ],
   "devDependencies": {
     "husky": "^7.0.4",
+    "lerna": "^4.0.0",
     "lint-staged": "^12.4.1"
   },
   "scripts": {
