@@ -25,4 +25,3 @@ export const methodHandlerToNextApiHandler =
       res.send(result.message);
     }
   };
-
