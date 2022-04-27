@@ -1,6 +1,6 @@
 {
   "name": "@luigiminardim/next-endpoint",
-  "version": "0.0.1-alpha.8",
+  "version": "0.0.1-alpha.9",
   "description": "Elegant functional controller wrapper for Next.js framework.",
   "main": "dist/index.js",
   "author": "luigiminardim",
