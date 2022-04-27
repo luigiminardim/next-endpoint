@@ -30,6 +30,9 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn build
       - run: yarn test
-      - run: yarn lerna publish  ${{ github.event.inputs.prerelease && '--conventional-prerelease' || '--conventional-commits' }}
+      - run: yarn lerna version  ${{ github.event.inputs.prerelease && '--conventional-prerelease' || '--conventional-commits' }} --create-release github
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: yarn
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
