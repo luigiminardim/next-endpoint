@@ -15,7 +15,7 @@ on:
         default: true
 
 env:
-  prerelease: ${{ github.event.release. }}
+  prerelease: ${{ github.event.release.prerelease }}
 
 jobs:
   build:
