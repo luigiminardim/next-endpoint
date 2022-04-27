@@ -4,31 +4,31 @@
 name: Publish
 
 on:
-  release:
-    types: [published]
-  
   workflow_dispatch:
-    inputs: 
-      prerelease:
+    inputs:
+      stable:
         type: boolean
-        description: Is it a pre-release publish?
-        default: true
-
-env:
-  prerelease: ${{ github.event.release.prerelease }}
+        description: Stable Release
+        default: false
+        required: false
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          registry-url: https://npm.pkg.github.com/
       - run: yarn install --frozen-lockfile
       - run: yarn build
-      - run: yarn test
-      - run: yarn lerna run publish  ${{ github.event.inputs.prerelease && '--conventional-prerelease' || '--conventional-commits' }}
+      - run: yarn lerna version --yes --conventional-commits  ${{ github.event.inputs.stable && '' || '--conventional-prerelease' }} --create-release github
         env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: |
+          npm config set '//registry.npmjs.org/:_authToken' "${{ secrets.NPM_TOKEN }}"
+          npm whoami
+          yarn lerna publish from-git --yes --no-verify-access

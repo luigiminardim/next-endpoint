@@ -1,28 +1,32 @@
 {
   "name": "@luigiminardim/next-endpoint",
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.10",
   "description": "Elegant functional controller wrapper for Next.js framework.",
   "main": "dist/index.js",
   "author": "luigiminardim",
   "license": "MIT",
+  "repository": "https://github.com/luigiminardim/next-endpoint",
   "files": [
     "dist"
   ],
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
-    "next": "12.0.0",
-    "typescript": "^4.6.3",
-    "eslint": "^8.14.0",
     "@typescript-eslint/eslint-plugin": "^5.21.0",
     "@typescript-eslint/parser": "^5.21.0",
+    "eslint": "^8.14.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.2.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.29.4",
+    "next": "12.0.0",
     "prettier": "^2.6.2",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0"
+    "typescript": "^4.6.3"
   },
   "peerDependencies": {
     "next": "12"
@@ -32,5 +36,6 @@
     "build": "tsc",
     "lint": "eslint . --ext .ts,.js",
     "lint:fix": "eslint . --ext .ts,.js --fix"
-  }
+  },
+  "gitHead": "301c728308ea622d6ef8d27b8ab4b17d0e0d4c80"
 }
