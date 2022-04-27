@@ -13,7 +13,7 @@ on:
         required: false
         
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -26,7 +26,6 @@ jobs:
           registry-url: https://npm.pkg.github.com/
       - run: yarn install --frozen-lockfile
       - run: yarn build
-      - run: yarn test
       - run: yarn lerna version --yes --conventional-commits --create-release github ${{ github.event.inputs.stable && '--conventional-graduate' || '--conventional-prerelease' }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
