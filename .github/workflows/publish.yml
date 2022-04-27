@@ -23,7 +23,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          registry-url: https://registry.npmjs.org/
           token: ${{ secrets.NPM_TOKEN }}
       - run: yarn install --frozen-lockfile
       - run: yarn build
@@ -31,3 +30,5 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: yarn lerna publish from-git --yes
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
