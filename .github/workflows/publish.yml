@@ -33,6 +33,6 @@ jobs:
       - run: yarn lerna version --yes --conventional-commits --create-release github ${{ github.event.inputs.prerelease && '--conventional-prerelease' }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: yarn
+      - run: yarn lerna publish from-git --yes
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
