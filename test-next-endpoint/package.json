@@ -1,6 +1,6 @@
 {
   "name": "test",
-  "version": "0.0.1-alpha.6",
+  "version": "0.0.1-alpha.7",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@luigiminardim/next-endpoint": "^0.0.1-alpha.6",
+    "@luigiminardim/next-endpoint": "^0.0.1-alpha.7",
     "cors": "^2.8.5",
     "next": "12.1.5",
     "react": "18.0.0",
