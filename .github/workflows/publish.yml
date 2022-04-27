@@ -24,11 +24,10 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
+          token: ${{ secrets.NPM_TOKEN }}
       - run: yarn install --frozen-lockfile
       - run: yarn build
       - run: yarn lerna version --yes --conventional-commits --create-release github ${{ github.event.inputs.stable && '--conventional-prerelease' }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: yarn lerna publish from-git --yes
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
