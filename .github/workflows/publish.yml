@@ -28,6 +28,7 @@ jobs:
       - run: yarn lerna version --yes --conventional-commits  ${{ github.event.inputs.stable && '' || '--conventional-prerelease' }} --create-release github
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: yarn lerna publish from-git --yes --no-verify-access
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: |
+          npm config set '//registry.npmjs.org/:_authToken' "${{ secrets.NPM_TOKEN }}"
+          npm whoami
+          yarn lerna publish from-git --yes --no-verify-access
