@@ -19,7 +19,8 @@
   "scripts": {
     "prepare": "husky install",
     "build": "lerna run build --scope=@luigiminardim/next-endpoint",
-    "dev": "lerna run dev --scope=@luigiminardim/next-endpoint"
+    "dev": "lerna run dev --scope=@luigiminardim/next-endpoint",
+    "test": "echo \"Error: no test specified\""
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown",
