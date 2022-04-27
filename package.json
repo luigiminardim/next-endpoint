@@ -17,7 +17,9 @@
     "lint-staged": "^12.4.1"
   },
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build": "lerna run build --scope=@luigiminardim/next-endpoint",
+    "dev": "lerna run dev --scope=@luigiminardim/next-endpoint"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown",
