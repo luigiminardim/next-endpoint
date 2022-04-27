@@ -4,9 +4,6 @@
 name: Publish
 
 on:
-  release:
-    types: [published]
-
   workflow_dispatch:
     inputs:
       prerelease:
@@ -30,7 +27,7 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn build
       - run: yarn test
-      - run: yarn lerna version  ${{ github.event.inputs.prerelease && '--conventional-prerelease' || '--conventional-commits' }} --create-release github
+      - run: yarn lerna version --yes --conventional-commits' --create-release github ${{ github.event.inputs.prerelease && '--conventional-prerelease' }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: yarn
